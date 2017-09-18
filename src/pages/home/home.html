@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar >
+    <ion-buttons end>
+<button ion-button    (click)="onOpenMenu()">
+<ion-icon name="menu"  ></ion-icon>
+</button>
+</ion-buttons>
+    <ion-title text-center >Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color:orange " >
+
+<button [color]="getBackground()"   ion-button small  (click)="onGoToLogIn()">LOG IN </button>
+<button   [color]="getBackground()"  ion-button small (click)="onGoToSignUp()">SIGN UP</button>
+
+
+<br>
+
+<br> 
+<br>
+<img  src="assets/images/3.jpg" align="middle" item-center> 
+<br>
+
+<h2 text-center  >Welcome</h2>  <br>
+<h3 text-center style=color:blue >To </h3> 
+<h1 class="title"   text-center  style="color:white">Ma2adirk</h1>  <br>
+<h2 text-center style=color:blue  >Your</h2> 
+<h2 text-center > Recipes & Shopping </h2>    <h2 text-center style=color:white> NoteBook</h2>
+
+
+
+
+</ion-content>
+
+
+
+
+

@@ -1,0 +1,52 @@
+<ion-menu [content]="nav">
+<ion-header>
+<ion-toolbar>
+
+<ion-title text-center>Menu</ion-title>
+
+</ion-toolbar>
+</ion-header>
+<ion-content style="background-color:gold">
+<ion-list>
+    
+    <!--*ngIf="!isAuthenticated"-->
+<button style="background-color:gold"   ion-item (click)="onLoad(signInPage)" 
+  *ngIf="!isAuthenticated">
+    Log In
+</button>
+
+<button ion-item  style="background-color:gold"  (click)="onLoad(homePage)">
+    Home
+</button>
+
+
+<button   style="background-color:gold"  ion-item (click)="onLoad(shoppingListPage)"
+ *ngIf="isAuthenticated">
+   Shopping List
+</button>
+<button  style="background-color:gold"  ion-item (click)="onLoad(signUpPage)" 
+*ngIf="!isAuthenticated">
+    Sign Up
+</button>
+
+<button   style="background-color:gold" ion-item (click)="onLoad(recipesPage)"
+*ngIf="isAuthenticated">
+    Recipes
+</button>
+
+<button style="background-color:gold" ion-item (click)="onLoad(settingsPage)"
+*ngIf="isAuthenticated">
+  Settings
+</button>
+
+<button style="background-color:gold" ion-item (click)="onLogout(homePage)" 
+*ngIf="isAuthenticated">
+  Log out
+</button>
+
+</ion-list>
+</ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #nav></ion-nav>

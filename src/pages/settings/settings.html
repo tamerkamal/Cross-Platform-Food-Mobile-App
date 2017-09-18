@@ -1,0 +1,52 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Settings</ion-title>
+
+  <ion-buttons end>
+<button ion-button  (click)="onOpenMenu()">
+<ion-icon name="menu"  style="color:black"></ion-icon>
+</button>
+</ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="c" padding>
+
+
+
+
+<ion-grid>
+
+<ion-row>
+
+<ion-col>
+
+<h4><b>Change color of Home page Buttons</b></h4> 
+
+<ion-toggle  
+
+(ionChange)="onToggle($event)" [checked]="checkAltBackground()">
+
+  
+</ion-toggle>
+
+</ion-col>
+
+<ion-col>
+
+
+
+</ion-col>
+
+
+</ion-row>
+
+</ion-grid>
+
+
+</ion-content>

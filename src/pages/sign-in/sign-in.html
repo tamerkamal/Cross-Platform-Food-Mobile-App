@@ -1,0 +1,80 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Sign In</ion-title>
+   
+   <ion-buttons end>
+<button style=color:blue ion-button (click)="onOpenMenu()">
+<ion-icon style=color:blue  name="menu"></ion-icon>
+</button>
+</ion-buttons>
+ </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color:orange">
+
+
+
+<form #f="ngForm" (ngSubmit)="onSignIn(f)" >
+
+
+
+
+ <ion-list>
+
+    <ion-item>
+
+      <ion-input  type="email"
+       ngModel name="email" 
+       required
+       placeholder="E-mail"></ion-input>
+
+
+
+    </ion-item>
+
+ <!--<ion-item>
+
+      <ion-input type="text" placeholder="Nickname"></ion-input>
+
+      
+
+    </ion-item>-->
+
+
+    <ion-item>
+
+      <ion-input type="password" placeholder="Password" 
+       ngModel 
+       name="password"
+        required 
+       ></ion-input>
+
+    </ion-item>
+
+ <!--<ion-item>
+
+      <ion-input type="password" placeholder="Confirm Password"></ion-input>
+
+    </ion-item>-->
+
+  </ion-list>
+
+
+  <div padding>
+
+    <button  ion-button
+    
+     type="submit"[disabled]="!f.valid" 
+     block 
+     >Sign In</button>
+
+  </div>
+</form>
+
+<!-- -->
+
+</ion-content>

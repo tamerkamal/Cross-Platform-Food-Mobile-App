@@ -1,0 +1,72 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Sign Up</ion-title>
+   
+   <ion-buttons style=color:blue end>
+<button style=color:blue ion-button (click)="onOpenMenu()">
+<ion-icon style=color:blue name="menu"></ion-icon>
+</button>
+</ion-buttons>
+ </ion-navbar>
+
+</ion-header>
+
+<ion-content padding style="background-color:orange">
+
+<form #f="ngForm" (ngSubmit)="onSignUp(f)" >
+
+ <ion-list>
+
+
+
+    <ion-item>
+
+      <ion-input type="email" ngModel name="email" required
+       placeholder="E-mail"></ion-input>
+
+
+
+    </ion-item>
+     <p>    Minimum password lengh "6"</p>
+
+ <!--<ion-item>
+
+      <ion-input type="text" placeholder="Nickname"></ion-input>
+
+      
+
+    </ion-item>-->
+
+
+    <ion-item>
+
+      <ion-input type="password" placeholder="Password" 
+       ngModel name="password" required 
+       [minlength]="6"></ion-input>
+   
+    </ion-item>   
+
+ <!--<ion-item>
+
+      <ion-input type="password" placeholder="Confirm Password"></ion-input>
+
+    </ion-item>-->
+
+  </ion-list>
+
+
+
+  <div padding>
+
+    <button ion-button
+     color="primary"
+     type="submit"[disabled]="!f.valid"
+     block 
+     >Sign Up</button>
+
+  </div>
+</form>
+
+</ion-content>

@@ -1,0 +1,40 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons  end>
+       <button   ion-button icon-only (click)="onNewRecipe()">
+        <ion-icon name="add" item-center></ion-icon>
+      </button>
+     
+      <button  ion-button (click)="onOpenMenu()">
+<ion-icon name="menu"></ion-icon>
+</button>
+    </ion-buttons>
+    <ion-title style="text-align:left">Recipes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color:orange">
+  <img  src="assets/images/3.jpg"  item-center> 
+  <br><br>
+
+  
+  <ion-list>
+       
+    <button 
+      ion-item   
+      *ngFor="let recipe of recipes; let i = index"
+      (click)="onLoadRecipe(recipe, i)">
+      <h1  text-center><b>{{ recipe.title }}</b></h1>
+      <h2 text-center style="color:blueviolet"  ><b>{{ recipe.difficulty }}</b></h2>
+       <h2  text-center  style="color:red" ><b>{{ recipe.otherCategory }}</b></h2>
+    </button>
+  </ion-list>
+  <button    block ion-button  (click)="onShowOptions($event)">
+       Load/Save
+           
+      </button>
+</ion-content>

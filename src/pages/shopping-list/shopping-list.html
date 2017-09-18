@@ -1,0 +1,77 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Shopping List</ion-title>
+    <ion-buttons end>
+<button ion-button (click)="onOpenMenu()">
+<ion-icon name="menu"></ion-icon>
+</button>
+</ion-buttons>
+<ion-buttons >
+
+<button ion-button empty small (click)="onShowOptions($event)">
+Save/Load
+<!--<ion-icon name="more"></ion-icon>-->
+
+</button>
+
+</ion-buttons>
+
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color:orange">
+  <img  src="assets/images/3.jpg"  item-center> 
+  <br><br>
+
+  <form #f="ngForm" (ngSubmit)="onAddItem(f)">
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Name</ion-label>
+        <ion-input
+          type="text"
+          name="ingredientName"
+          placeholder="Milk"
+          ngModel
+          required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Quantity</ion-label>
+        <ion-input
+          type="string"
+          name="quantity"
+          placeholder="2"
+          ngModel
+          required></ion-input>
+      </ion-item>
+    </ion-list>
+    <button
+    style="background-color: blue"
+      ion-button
+      type="submit"
+      block
+      [disabled]="!f.valid">Add Item</button>
+      <h6 text-center> Note: Please check the items that you bought</h6>
+  </form>
+  <br>
+
+  <ion-list>
+    <div *ngFor="let item of listItems; let i = index" >
+     
+
+     <ion-item  class="left">  
+       
+        <ion-label> ({{i+1}}) {{ item.quantity}} {{ item.name }}  </ion-label>
+       <ion-checkbox item-right></ion-checkbox>  
+      </ion-item>
+   <button  class="right" item-right ion button (click)="onRemove(i)"> <b>Remove</b>   <ion-icon name='trash' is-active="false"></ion-icon></button>  
+     <br>  <br><br>
+    </div>
+     
+    <br>
+
+  </ion-list>
+</ion-content>
